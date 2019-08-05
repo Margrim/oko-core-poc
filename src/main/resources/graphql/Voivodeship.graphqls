@@ -1,0 +1,10 @@
+type Voivodeship{
+    idVoivodeship: ID
+    name: String
+}
+
+extend type Query {
+    findAllVoivodeships: [Voivodeship]
+    findVoivodeshipById(idVoivodeship: ID): Voivodeship
+    findVoivodeshipByName(name: String): Voivodeship
+}

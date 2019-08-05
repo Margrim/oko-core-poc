@@ -1,0 +1,10 @@
+type EntityType{
+    idEntityType: ID
+    entityType: String
+}
+
+extend type Query {
+    findAllEntityTypes: [EntityType]
+    findEntityTypeById(idEntityType: ID): EntityType
+    findEntityTypeByType(entityType: String): EntityType
+}

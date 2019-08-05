@@ -1,0 +1,32 @@
+type Address {
+    idAddress: ID
+    county: String
+    city: String
+    municipality: String
+    street: String
+    number: String
+    flatNumber: String
+    postalCode: String
+    institution: Institution
+    voivodeship: Voivodeship
+}
+
+input AddressDto {
+    county: String
+    city: String
+    municipality: String
+    street: String
+    number: String
+    flatNumber: String
+    postalCode: String
+    idVoivodeship: ID
+}
+
+extend type Query {
+    findAddressById(idAddress: ID): Address
+    findAddressByCity(city: String): Address
+}
+
+extend type Mutation {
+    addAddress(city: String, street: String, number: String, idVoivodeship: ID) : Address
+}

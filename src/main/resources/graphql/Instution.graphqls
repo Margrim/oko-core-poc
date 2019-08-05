@@ -1,0 +1,26 @@
+type Institution{
+    idInstitution: ID
+    name: String
+    nip: String
+    address: Address
+    entityType: EntityType
+}
+
+extend type Query {
+    findAllInstitutions: [Institution]
+    findInstitutionById(idInstitution: ID): Institution
+    findInstitutionByName(name: String): Institution
+}
+
+extend type Mutation {
+    addInstitution(
+        name: String,
+        nip: String,
+        idEntityType: ID
+        city: String
+        street: String
+        number: String
+        idVoivodeship: ID
+#        address: AddressDto
+    ): Institution
+}
